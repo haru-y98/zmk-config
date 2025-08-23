@@ -1,0 +1,7 @@
+﻿.west/
+zmk/
+modules/
+tools/
+zephyr/
+bootloader/
+build/
