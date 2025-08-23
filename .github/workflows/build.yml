@@ -32,18 +32,18 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
-      - name: West Build (Lily58 Left)
-        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=lily58_left
+      - name: West Build (Jisplit89 Left)
+        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=jisplit89_left
       - name: Rename left firmware
-        run: cp build/zephyr/zmk.uf2 lily58_left.uf2
-      - name: West Build (Lily58 Right)
-        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=lily58_right  
+        run: cp build/zephyr/zmk.uf2 jisplit89_left.uf2
+      - name: West Build (Jisplit89 Right)
+        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=jisplit89_right  
       - name: Rename right firmware
-        run: cp build/zephyr/zmk.uf2 lily58_right.uf2
+        run: cp build/zephyr/zmk.uf2 jisplit89_right.uf2
       - name: Archive firmware
         uses: actions/upload-artifact@v4
         with:
           name: firmware
           path: |
-            lily58_left.uf2
-            lily58_right.uf2
+            jisplit89_left.uf2
+            jisplit89_right.uf2
