@@ -1,0 +1,5 @@
+#include "nice_nano.overlay"
+
+&kscan {
+    debounce-period-ms = <5>;
+};
