@@ -12,9 +12,9 @@ jobs:
       matrix:
         include:
           - board: nice_nano_v2
-            shield: lily58_left
+            shield: jisplit89_left
           - board: nice_nano_v2
-            shield: lily58_right
+            shield: jisplit89_right
     steps:
       - name: Checkout
         uses: actions/checkout@v4
