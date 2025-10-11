@@ -1,5 +1,7 @@
 ﻿config SHIELD_JISPLIT89_LEFT
-    def_bool $(SHIELD_JISPLIT89_LEFT)
+    def_bool $(shield_list_contains,jisplit89_left)
+    select SPLIT_KEYBOARD
 
-config SHIELD_JISPLIT89_RIGHT  
-    def_bool $(SHIELD_JISPLIT89_RIGHT)
+config SHIELD_JISPLIT89_RIGHT
+    def_bool $(shield_list_contains,jisplit89_right)
+    select SPLIT_KEYBOARD
