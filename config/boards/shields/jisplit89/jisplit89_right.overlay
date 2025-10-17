@@ -1,5 +1,1 @@
 ﻿#include "jisplit89.dtsi"
-
-&default_transform {
-    col-offset = <6>;
-};
