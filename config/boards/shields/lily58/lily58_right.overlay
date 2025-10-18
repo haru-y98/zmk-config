@@ -1,4 +1,4 @@
-#include "jisplit89.dtsi"
+#include "lily58.dtsi"
 
 &default_transform {
     col-offset = <8>;

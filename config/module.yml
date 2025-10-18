@@ -1,0 +1,7 @@
+build:
+  cmake-args: -DZMK_EXTRA_MODULES="${ZEPHYR_BASE}/../config"
+  settings:
+    board_root: config
+    dts_root: config
+    soc_root: config
+    arch_root: config
