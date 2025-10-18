@@ -1,33 +1,33 @@
-﻿#include <behaviors.dtsi>
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
 / {
     keymap {
         compatible = "zmk,keymap";
-        
+
         default_layer {
-            bindings = 
-// Row 0 (15 keys): ESC, F1-F5, F6-F12, Insert, Delete
+            bindings = <
+// Row 0 (15キー): ESC, F1-F5, F6-F12, Insert, Delete
 &kp ESC   &kp F1    &kp F2    &kp F3    &kp F4    &kp F5                                 &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12   &kp INS   &kp DEL
-// Row 1 (16 keys): Grave, 1-5, 6-0, -, =, YEN, Backspace, Home
+// Row 1 (16キー): Grave, 1-5, 6-0, -, =, YEN, Backspace, Home
 &kp GRAVE &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                 &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS &kp EQUAL &kp INT3  &kp BSPC  &kp HOME
-// Row 2 (15 keys): Tab, Q-T, Y-P, [, ], \, PgUp
+// Row 2 (15キー): Tab, Q-T, Y-P, [, ], \, PgUp
 &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                                  &kp Y     &kp U     &kp I     &kp O     &kp P     &kp LBKT  &kp RBKT  &kp BSLH            &kp PG_UP
-// Row 3 (14 keys): Ctrl, A-G, H-L, ;, ', Enter, PgDn
+// Row 3 (14キー): Ctrl, A-G, H-L, ;, ', Enter, PgDn
 &kp LCTRL &kp A     &kp S     &kp D     &kp F     &kp G                                  &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT   &kp RET                       &kp PG_DN
-// Row 4 (15 keys): Shift, Z-B, N-/, RO, RShift, Up, End
+// Row 4 (15キー): Shift, Z-B, N-/, RO, RShift, Up, End
 &kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B                                  &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp INT1  &kp RSHFT &kp UP    &kp END
-// Row 5 (14 keys): Adjust, Win, Alt, HENKAN, Space, MUHENKAN, Space, KANA, RAlt, RCtrl, RWin, Left, Down, Right
+// Row 5 (14キー): Adjust, Win, Alt, HENKAN, Space, MUHENKAN, Space, KANA, RAlt, RCtrl, RWin, Left, Down, Right
 &mo 1     &kp LGUI  &kp LALT  &kp INT5  &kp SPACE &kp INT4                               &kp SPACE &kp INT2  &kp RALT  &kp RCTRL &kp RGUI            &kp LEFT  &kp DOWN  &kp RIGHT
             >;
         };
-        
+
         adjust_layer {
-            bindings = 
+            bindings = <
 // Row 0
 &trans    &trans        &trans        &trans        &trans        &trans                                 &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
-// Row 1  
+// Row 1
 &trans    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                           &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans
 // Row 2
 &trans    &trans        &trans        &trans        &trans        &trans                                 &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans              &trans
