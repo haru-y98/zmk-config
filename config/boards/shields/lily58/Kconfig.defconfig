@@ -1,7 +1,7 @@
 if SHIELD_LILY58_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "Jisplit89"
+    default "TEST123456789"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
