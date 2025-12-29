@@ -6,13 +6,14 @@
 
 &kscan0 {
     col-gpios
-        = <&pro_micro 21 GPIO_ACTIVE_HIGH> // F4 (P0.29) - col 0
-        , <&pro_micro 20 GPIO_ACTIVE_HIGH> // F5 (P0.02) - col 1
-        , <&pro_micro 19 GPIO_ACTIVE_HIGH> // F6 (P1.15) - col 2
-        , <&pro_micro 18 GPIO_ACTIVE_HIGH> // F7 (P1.13) - col 3
-        , <&pro_micro 15 GPIO_ACTIVE_HIGH> // B1 (P0.20) - col 4
-        , <&pro_micro 14 GPIO_ACTIVE_HIGH> // B3 (P1.04) - col 5
-        , <&pro_micro 16 GPIO_ACTIVE_HIGH> // B2 (P0.17) - col 6
-        , <&pro_micro 9 GPIO_ACTIVE_HIGH>  // B5 (P0.09) - col 7
+        // DIAGNOSTIC: Swapped B and F pins to test if B pins work
+        = <&pro_micro 15 GPIO_ACTIVE_HIGH> // B1 (P0.20) - TEST col 0
+        , <&pro_micro 14 GPIO_ACTIVE_HIGH> // B3 (P1.04) - TEST col 1
+        , <&pro_micro 16 GPIO_ACTIVE_HIGH> // B2 (P0.17) - TEST col 2
+        , <&pro_micro 9 GPIO_ACTIVE_HIGH>  // B5 (P0.09) - TEST col 3
+        , <&pro_micro 21 GPIO_ACTIVE_HIGH> // F4 (P0.29) - TEST col 4
+        , <&pro_micro 20 GPIO_ACTIVE_HIGH> // F5 (P0.02) - TEST col 5
+        , <&pro_micro 19 GPIO_ACTIVE_HIGH> // F6 (P1.15) - TEST col 6
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH> // F7 (P1.13) - TEST col 7
         ;
 };
