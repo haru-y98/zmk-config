@@ -1,0 +1,13 @@
+file_format: "1"
+id: jisplit89
+name: Jisplit89
+type: shield
+url: https://github.com/yourusername/jisplit89
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+siblings:
+  - jisplit89_left
+  - jisplit89_right
