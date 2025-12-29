@@ -1,8 +1,0 @@
-# Copyright (c) 2020 The ZMK Contributors
-# SPDX-License-Identifier: MIT
-
-config SHIELD_LILY58_LEFT
-    def_bool $(shield_list_contains,lily58_left)
-
-config SHIELD_LILY58_RIGHT
-    def_bool $(shield_list_contains,lily58_right)
