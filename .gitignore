@@ -2,6 +2,7 @@
 zmk/
 modules/
 tools/
-zephyr/
+zephyr/*
+!zephyr/module.yml
 bootloader/
 build/
