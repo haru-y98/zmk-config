@@ -1,4 +1,5 @@
 #include "jisplit89.dtsi"
+#include <dt-bindings/led/led.h>
 
 &default_transform {
     col-offset = <0>;
