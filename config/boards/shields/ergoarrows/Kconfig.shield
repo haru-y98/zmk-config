@@ -1,0 +1,5 @@
+config SHIELD_ERGOARROWS_LEFT
+    def_bool $(shields_list_contains,ergoarrows_left)
+
+config SHIELD_ERGOARROWS_RIGHT
+    def_bool $(shields_list_contains,ergoarrows_right)

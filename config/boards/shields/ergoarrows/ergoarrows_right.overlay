@@ -1,0 +1,6 @@
+/*
+ * ErgoArrows Right Half
+ * Peripheral side - shares same kscan configuration
+ */
+
+#include "ergoarrows_left.overlay"

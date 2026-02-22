@@ -1,0 +1,56 @@
+/*
+ * ErgoArrows Default Keymap
+ * 76 keys (38 per side)
+ * Left:  rows 0-5,  cols 0-6  (row 5: only col 1,2,3 = arrow keys)
+ * Right: rows 6-11, cols 0-6  (row 11: only col 1,2,3 = arrow keys)
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+/* Left hand */
+/* Row 0 */  &kp TAB    &kp Q    &kp W    &kp E    &kp R    &kp T    &kp LBKT
+/* Row 1 */  &kp LCTRL  &kp A    &kp S    &kp D    &kp F    &kp G    &kp MINUS
+/* Row 2 */  &kp LSHFT  &kp Z    &kp X    &kp C    &kp V    &kp B    &kp EQUAL
+/* Row 3 */  &kp ESC    &kp N1   &kp N2   &kp N3   &kp N4   &kp N5   &kp N6
+/* Row 4 */  &kp LGUI   &kp LALT &kp BSPC &kp DEL  &kp LALT &kp LSHFT &mo 1
+/* Row 5 (arrows only) */ &kp LEFT &kp DOWN &kp UP
+
+/* Right hand */
+/* Row 6 */  &kp RBKT   &kp Y    &kp U    &kp I    &kp O    &kp P    &kp BSPC
+/* Row 7 */  &kp APOS   &kp H    &kp J    &kp K    &kp L    &kp SEMI &kp RET
+/* Row 8 */  &kp BSLH   &kp N    &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+/* Row 9 */  &kp N7     &kp N8   &kp N9   &kp N0   &kp MINUS &kp EQUAL &kp GRAVE
+/* Row 10 */ &mo 1      &kp RSHFT &kp RALT &kp RALT &kp RALT &kp RGUI &kp RCTRL
+/* Row 11 (arrows only) */ &kp LEFT &kp DOWN &kp RIGHT
+            >;
+        };
+
+        lower_layer {
+            bindings = <
+/* Left hand */
+/* Row 0 */  &trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans
+/* Row 1 */  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+/* Row 2 */  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+/* Row 3 */  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+/* Row 4 */  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+/* Row 5 */  &trans  &trans  &trans
+
+/* Right hand */
+/* Row 6 */  &trans  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10 &kp DEL
+/* Row 7 */  &trans  &trans  &trans  &trans  &trans  &kp F11 &trans
+/* Row 8 */  &trans  &trans  &trans  &trans  &trans  &kp F12 &trans
+/* Row 9 */  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+/* Row 10 */ &trans  &trans  &trans  &trans  &trans  &trans  &trans
+/* Row 11 */ &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_CLR
+            >;
+        };
+    };
+};
