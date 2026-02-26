@@ -1,9 +1,10 @@
 /*
  * ErgoArrows Right Half
- * Peripheral side
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/led/led.h>
 
 / {
     chosen {
@@ -64,20 +65,20 @@
 &spi1 {
     compatible = "nordic,nrf-spim";
     status = "okay";
-    mosi-pin = <6>;   /* pro_micro pin 3 = D3 = nRF52840 P0.06 */
+    mosi-pin = <6>;
     sck-pin = <31>;
-    cs-gpios = <&gpio0 31 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
     led_strip: ws2812@0 {
         compatible = "worldsemi,ws2812-spi";
         label = "WS2812";
         reg = <0>;
         spi-max-frequency = <4000000>;
-        chain-length = <43>;   /* right half: 43 LEDs */
+        chain-length = <43>;
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
         color-mapping = <LED_COLOR_ID_GREEN
                          LED_COLOR_ID_RED
-                         LED_COLOR_ID_BLUE>;   /* SK6812 is GRB */
+                         LED_COLOR_ID_BLUE>;
     };
 };

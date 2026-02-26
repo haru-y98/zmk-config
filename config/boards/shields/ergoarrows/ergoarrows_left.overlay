@@ -1,15 +1,10 @@
 /*
  * ErgoArrows Left Half
- *
- * QMK pin mapping (AVR -> Arduino pin number -> ZMK pro_micro label):
- *   cols: F4=21, F5=20, F6=19, F7=18, B1=15, B3=14, B2=16
- *   rows: D4=4, C6=5, D7=6, E6=7, B4=8, B5=9
- *   serial: D0=0 (TX)
- *   LED: D3=3 (WS2812 / SK6812MINI-E)
- *   diode_direction: COL2ROW
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/led/led.h>
 
 / {
     chosen {
@@ -47,22 +42,22 @@
         diode-direction = "col2row";
 
         col-gpios
-            = <&pro_micro 21 GPIO_ACTIVE_HIGH>   /* F4 */
-            , <&pro_micro 20 GPIO_ACTIVE_HIGH>   /* F5 */
-            , <&pro_micro 19 GPIO_ACTIVE_HIGH>   /* F6 */
-            , <&pro_micro 18 GPIO_ACTIVE_HIGH>   /* F7 */
-            , <&pro_micro 15 GPIO_ACTIVE_HIGH>   /* B1/SCK */
-            , <&pro_micro 14 GPIO_ACTIVE_HIGH>   /* B3/MISO */
-            , <&pro_micro 16 GPIO_ACTIVE_HIGH>   /* B2/MOSI */
+            = <&pro_micro 21 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 20 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 19 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 18 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 15 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 14 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 16 GPIO_ACTIVE_HIGH>
             ;
 
         row-gpios
-            = <&pro_micro 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* D4 */
-            , <&pro_micro 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* C6 */
-            , <&pro_micro 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* D7 */
-            , <&pro_micro 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* E6 */
-            , <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* B4 */
-            , <&pro_micro 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* B5 */
+            = <&pro_micro 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
 };
@@ -70,20 +65,20 @@
 &spi1 {
     compatible = "nordic,nrf-spim";
     status = "okay";
-    mosi-pin = <6>;   /* pro_micro pin 3 = D3 = nRF52840 P0.06 */
-    sck-pin = <31>;   /* dummy */
-    cs-gpios = <&gpio0 31 GPIO_ACTIVE_LOW>;   /* dummy */
+    mosi-pin = <6>;
+    sck-pin = <31>;
+    cs-gpios = <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
     led_strip: ws2812@0 {
         compatible = "worldsemi,ws2812-spi";
         label = "WS2812";
         reg = <0>;
         spi-max-frequency = <4000000>;
-        chain-length = <43>;   /* left half: 43 LEDs */
+        chain-length = <43>;
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
         color-mapping = <LED_COLOR_ID_GREEN
                          LED_COLOR_ID_RED
-                         LED_COLOR_ID_BLUE>;   /* SK6812 is GRB */
+                         LED_COLOR_ID_BLUE>;
     };
 };
