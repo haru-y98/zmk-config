@@ -5,6 +5,7 @@
  *   cols: F4=21, F5=20, F6=19, F7=18, B1=15, B3=14, B2=16
  *   rows: D4=4, C6=5, D7=6, E6=7, B4=8, B5=9
  *   serial: D0=0 (TX)
+ *   LED: D3=3 (WS2812 / SK6812MINI-E)
  *   diode_direction: COL2ROW
  */
 
@@ -14,6 +15,7 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
+        zmk,underglow = &led_strip;
     };
 
     default_transform: keymap_transform_0 {
@@ -62,5 +64,26 @@
             , <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* B4 */
             , <&pro_micro 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* B5 */
             ;
+    };
+};
+
+&spi1 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+    mosi-pin = <6>;   /* pro_micro pin 3 = D3 = nRF52840 P0.06 */
+    sck-pin = <31>;   /* dummy */
+    cs-gpios = <&gpio0 31 GPIO_ACTIVE_LOW>;   /* dummy */
+
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+        label = "WS2812";
+        reg = <0>;
+        spi-max-frequency = <4000000>;
+        chain-length = <43>;   /* left half: 43 LEDs */
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN
+                         LED_COLOR_ID_RED
+                         LED_COLOR_ID_BLUE>;   /* SK6812 is GRB */
     };
 };
