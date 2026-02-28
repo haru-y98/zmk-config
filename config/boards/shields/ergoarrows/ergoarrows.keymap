@@ -50,7 +50,7 @@
 /* Row 8  */ &trans     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp KP_MULTIPLY &kp PG_UP
 /* Row 9  */ &trans     &trans    &kp PG_DN &kp PG_UP &trans    &trans         &kp PG_DN
 /* Row 10 */ &trans     &trans    &kp BSPC  &trans    &trans    &trans         &trans
-/* Row 11 */ &rgb_ug RGB_TOG  &rgb_ug RGB_BRI_INC  &rgb_ug RGB_BRI_DEC
+/* Row 11 */ &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD
             >;
         };
     };
