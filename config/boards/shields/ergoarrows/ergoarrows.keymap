@@ -47,7 +47,7 @@
 /* Right hand */
 /* Row 6  */ &trans     &kp F7    &kp F8    &kp F9    &kp F10   &kp F11        &kp F12
 /* Row 7  */ &trans     &kp BSPC  &kp DEL   &kp HOME  &kp END   &trans         &trans
-/* Row 8  */ &trans     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp KP_ASTERISK &kp PG_UP
+/* Row 8  */ &trans     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp KP_MULTIPLY &kp PG_UP
 /* Row 9  */ &trans     &trans    &kp PG_DN &kp PG_UP &trans    &trans         &kp PG_DN
 /* Row 10 */ &trans     &trans    &kp BSPC  &trans    &trans    &trans         &trans
 /* Row 11 */ &rgb_ug RGB_TOG  &rgb_ug RGB_BRI_INC  &rgb_ug RGB_BRI_DEC
