@@ -3,15 +3,30 @@
  * WS2812 pin: QMK D3 = Arduino 3 = pro_micro 3 = nRF52840 P0.17
  */
 
+#include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/led/led.h>
-#include "ergoarrows.dtsi"
 
 / {
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
         zmk,underglow = &led_strip;
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <7>;
+        rows = <6>;
+
+        map = <
+            RC(6,0)  RC(6,1)  RC(6,2)  RC(6,3)  RC(6,4)  RC(6,5)  RC(6,6)
+            RC(7,0)  RC(7,1)  RC(7,2)  RC(7,3)  RC(7,4)  RC(7,5)  RC(7,6)
+            RC(8,0)  RC(8,1)  RC(8,2)  RC(8,3)  RC(8,4)  RC(8,5)  RC(8,6)
+            RC(9,0)  RC(9,1)  RC(9,2)  RC(9,3)  RC(9,4)  RC(9,5)  RC(9,6)
+            RC(10,0) RC(10,1) RC(10,2) RC(10,3) RC(10,4) RC(10,5) RC(10,6)
+                     RC(11,1) RC(11,2) RC(11,3)
+        >;
     };
 
     kscan0: kscan {
@@ -44,7 +59,7 @@
 &pinctrl {
     spi1_default: spi1_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 17)>;  /* P0.17 = pro_micro 3 = D3 */
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 17)>;
         };
     };
     spi1_sleep: spi1_sleep {
