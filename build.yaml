@@ -1,11 +1,11 @@
 include:
-  - board: nice_nano_v2/nrf52840/zmk
+  - board: nice_nano_v2
     shield: ergoarrows_left
-  - board: nice_nano_v2/nrf52840/zmk
+  - board: nice_nano_v2
     shield: ergoarrows_right
-  - board: nice_nano_v2/nrf52840/zmk
+  - board: nice_nano_v2
     shield: settings_reset
-  - board: nice_nano_v2/nrf52840/zmk
+  - board: nice_nano_v2
     shield: jisplit89_left
-  - board: nice_nano_v2/nrf52840/zmk
+  - board: nice_nano_v2
     shield: jisplit89_right
