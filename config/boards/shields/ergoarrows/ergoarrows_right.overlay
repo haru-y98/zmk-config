@@ -52,3 +52,6 @@
                          LED_COLOR_ID_BLUE>;
     };
 };
+&default_transform {
+    row-offset = <6>;
+};
