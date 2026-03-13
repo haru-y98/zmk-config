@@ -4,16 +4,13 @@
  * Left:  rows 0-5,  cols 0-6  (row 5: only col 1,2,3 = arrow keys)
  * Right: rows 6-11, cols 0-6  (row 11: only col 1,2,3 = arrow keys)
  */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
-
 / {
     keymap {
         compatible = "zmk,keymap";
-
         default_layer {
             bindings = <
 /* Left hand */
@@ -21,19 +18,17 @@
 /* Row 1 */  &kp TAB    &kp Q     &kp W     &kp E     &kp R     &kp T     &kp Y
 /* Row 2 */  &kp CAPS   &kp A     &kp S     &kp D     &kp F     &kp G     &kp H
 /* Row 3 */  &kp LSHFT  &kp Z     &kp X     &kp C     &kp V     &kp B     &kp N
-/* Row 4 */  &kp LCTRL  &kp LGUI  &kp PG_UP &kp LALT  &kp LANG2 &kp SPACE &kp BSPC
+/* Row 4 */  &kp LCTRL  &kp LGUI  &kp PG_UP &kp LALT  &kp LANG2 &kp SPACE &kp RET
 /* Row 5 */  &kp LEFT   &kp PG_DN &kp RIGHT
-
 /* Right hand */
-/* Row 6  */ &kp N6     &kp N6    &kp N7    &kp N8    &kp N9    &kp N0     &kp MINUS
-/* Row 7  */ &kp Y      &kp Y     &kp U     &kp I     &kp O     &kp P      &kp LBKT
-/* Row 8  */ &kp H      &kp H     &kp J     &kp K     &kp L     &kp SEMI   &kp LS(SEMI)
-/* Row 9  */ &kp N      &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH   &kp BSLH
-/* Row 10 */ &kp SPACE  &kp RET   &kp LANG1 &mo 1     &kp UP    &kp BSPC   &kp DEL
+/* Row 6  */ &kp N6     &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS  &kp EQUAL
+/* Row 7  */ &kp Y      &kp U     &kp I     &kp O     &kp P     &kp LBKT   &kp RBKT
+/* Row 8  */ &kp H      &kp J     &kp K     &kp L     &kp SEMI  &kp SQT    &kp RET
+/* Row 9  */ &kp N      &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp BSLH   &kp INT_YEN
+/* Row 10 */ &kp SPACE  &kp LANG1 &kp BSPC  &mo 1     &kp UP    &kp HOME   &kp DEL
 /* Row 11 */ &kp LEFT   &kp DOWN  &kp RIGHT
             >;
         };
-
         lower_layer {
             bindings = <
 /* Left hand */
@@ -43,14 +38,13 @@
 /* Row 3 */  &trans     &trans         &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3     &kp KP_DOT
 /* Row 4 */  &trans     &trans         &kp C_VOL_UP    &trans     &trans     &kp KP_ENTER  &trans
 /* Row 5 */  &kp C_MUTE &kp C_VOL_DN  &kp C_NEXT
-
 /* Right hand */
-/* Row 6  */ &trans     &kp F7    &kp F8    &kp F9    &kp F10   &kp F11        &kp F12
-/* Row 7  */ &trans     &kp BSPC  &kp DEL   &kp HOME  &kp END   &trans         &trans
-/* Row 8  */ &trans     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp KP_MULTIPLY &kp PG_UP
-/* Row 9  */ &trans     &trans    &kp PG_DN &kp PG_UP &trans    &trans         &kp PG_DN
-/* Row 10 */ &trans     &trans    &kp BSPC  &trans    &trans    &trans         &trans
-/* Row 11 */ &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD
+/* Row 6  */ &trans          &kp F7    &kp F8    &kp F9    &kp F10   &kp F11         &kp F12
+/* Row 7  */ &trans          &kp BSPC  &kp DEL   &kp HOME  &kp END   &trans          &trans
+/* Row 8  */ &trans          &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp KP_MULTIPLY &kp PG_UP
+/* Row 9  */ &trans          &trans    &kp PG_DN &kp PG_UP &trans    &trans          &kp PG_DN
+/* Row 10 */ &rgb_ug RGB_TOG &rgb_ug RGB_HUI &kp BSPC &trans &rgb_ug RGB_BRI &trans &trans
+/* Row 11 */ &rgb_ug RGB_EFR &rgb_ug RGB_BRD &rgb_ug RGB_EFF
             >;
         };
     };
