@@ -1,0 +1,22 @@
+/*
+ * Copyright (c) 2024 HaruStudio
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "helix_pico.dtsi"
+
+&default_transform {
+    col-offset = <0>;
+};
+
+&kscan0 {
+    col-gpios
+        = <&pro_micro 21 GPIO_ACTIVE_HIGH>  /* F4 - col 0 */
+        , <&pro_micro 20 GPIO_ACTIVE_HIGH>  /* F5 - col 1 */
+        , <&pro_micro 19 GPIO_ACTIVE_HIGH>  /* F6 - col 2 */
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH>  /* F7 - col 3 */
+        , <&pro_micro 15 GPIO_ACTIVE_HIGH>  /* B1 - col 4 */
+        , <&pro_micro 14 GPIO_ACTIVE_HIGH>  /* B3 - col 5 */
+        , <&pro_micro 16 GPIO_ACTIVE_HIGH>  /* B2 - col 6 (thumb key) */
+        ;
+};

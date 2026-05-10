@@ -1,0 +1,8 @@
+# Copyright (c) 2024 HaruStudio
+# SPDX-License-Identifier: MIT
+
+config SHIELD_HELIX_PICO_LEFT
+    def_bool $(shields_list_contains,helix_pico_left)
+
+config SHIELD_HELIX_PICO_RIGHT
+    def_bool $(shields_list_contains,helix_pico_right)

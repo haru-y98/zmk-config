@@ -1,0 +1,16 @@
+if SHIELD_HELIX_PICO_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Helix Pico"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif # SHIELD_HELIX_PICO_LEFT
+
+if SHIELD_HELIX_PICO_LEFT || SHIELD_HELIX_PICO_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif # SHIELD_HELIX_PICO_LEFT || SHIELD_HELIX_PICO_RIGHT

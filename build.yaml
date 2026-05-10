@@ -9,3 +9,7 @@ include:
     shield: jisplit89_left
   - board: nice_nano/nrf52840/zmk
     shield: jisplit89_right
+  - board: nice_nano/nrf52840/zmk
+    shield: helix_pico_left
+  - board: nice_nano/nrf52840/zmk
+    shield: helix_pico_right
